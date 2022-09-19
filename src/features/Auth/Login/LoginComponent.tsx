@@ -5,17 +5,21 @@ import {Formik, FormikHelpers} from 'formik';
 import {validateLogin} from "./validateLogin";
 import {LoginForm} from "./LoginForm/LoginForm";
 import {LoginType} from "../authTypes";
-import {useAppSelector} from "../../../common/hooks/hooks";
-import {getIsLoggedIn} from "../selectors";
+import {useAppDispatch, useAppSelector} from "../../../common/hooks/hooks";
 import {Navigate} from "react-router-dom";
 import {path} from "../../../common/enums/path";
+import {authSelectors, login} from "../index";
 
-export const Login = () => {
 
-    const isLoggedIn = useAppSelector(getIsLoggedIn)
+export const LoginComponent = () => {
 
-    const onSubmitHandler = (values: LoginType) => {
-        console.log(values)
+    const dispatch = useAppDispatch()
+
+    const isLoggedIn = useAppSelector(authSelectors.getIsLoggedIn)
+
+    const onSubmitHandler = async (values: LoginType, {resetForm}: FormikHelpers<LoginType>) => {
+        await dispatch(login(values))
+        resetForm()
     }
 
 

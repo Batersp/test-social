@@ -1,7 +1,11 @@
-import {authActions} from "../features/Auth";
-import {appActions} from "../features/Application";
+import {changeLoggedIn} from "../features/Auth/auth-reducer";
+import {setAppSnackbarValue, setAppStatus, setError} from "../features/Application/application-reducer";
+import {setProfile} from "../features/Profile/profile-reducer";
+
 
 export type AppActionsType =
-   | ReturnType<typeof authActions.changeLoggedIn>
-   | ReturnType<typeof appActions.setAppStatus>
-   | ReturnType<typeof appActions.setAppSnackbarValue>
+   | ReturnType<typeof changeLoggedIn>
+   | ReturnType<typeof setAppStatus>
+   | ReturnType<typeof setAppSnackbarValue>
+   | ReturnType<typeof setError>
+   | ReturnType<typeof setProfile>

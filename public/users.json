@@ -1,14 +1,20 @@
 [
   {
-    "userName": "David",
-    "password": "12345"
+    "name": "David",
+    "password": "12345",
+    "photo": "ffff",
+    "status": "all good"
   },
   {
-    "userName": "Mike",
-    "password": "54321"
+    "name": "Mike",
+    "password": "54321",
+    "photo": "ffff",
+    "status": "yo yo yo"
   },
   {
-    "userName": "Bobi",
-    "password": "2614"
+    "name": "Bobi",
+    "password": "2614",
+    "photo": "ffff",
+    "status": "ARSENAL"
   }
 ]

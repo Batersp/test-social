@@ -7,7 +7,8 @@ export const slice = createSlice({
     name: 'app',
     initialState: {
         status: requestStatus.SUCCEEDED,
-        snackbar: {} as SnackbarType
+        snackbar: {} as SnackbarType,
+        error: ''
     },
     reducers: {
         setAppStatus(state, action: PayloadAction<{status: requestStatus}>) {
@@ -15,9 +16,15 @@ export const slice = createSlice({
         },
         setAppSnackbarValue(state, action: PayloadAction<{type: snackbarType | undefined, message: string | null}>) {
             state.snackbar = action.payload
+        },
+        setError( state, action: PayloadAction<{error: string}>) {
+            state.error = action.payload.error
         }
     }
 
 })
+
+export const {setAppSnackbarValue, setAppStatus, setError} = slice.actions
+
 
 
