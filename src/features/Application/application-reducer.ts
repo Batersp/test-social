@@ -6,7 +6,7 @@ import {snackbarType} from "../../common/enums/snackbarType";
 export const slice = createSlice({
     name: 'app',
     initialState: {
-        status: requestStatus.LOADING,
+        status: requestStatus.SUCCEEDED,
         snackbar: {} as SnackbarType
     },
     reducers: {
@@ -19,3 +19,5 @@ export const slice = createSlice({
     }
 
 })
+
+
