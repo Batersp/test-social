@@ -9,14 +9,14 @@ import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 export const Header = () => {
 
     const dispatch = useAppDispatch()
-    const userName = useAppSelector(profileSelectors.getUserName)
+    const profile = useAppSelector(profileSelectors.getProfile)
     const isLoggedIn = useAppSelector(authSelectors.getIsLoggedIn)
 
     return (
         <div className={style.container}>
             {isLoggedIn
-                ? <div>
-                    <div>{userName}</div>
+                ? <div className={style.main}>
+                    <div className={style.name}>{profile.name}</div>
                     <ExitToAppOutlinedIcon
                         className={style.icon}
                         color={"primary"}
@@ -24,7 +24,7 @@ export const Header = () => {
                         onClick={() => dispatch(logout())}
                     />
                 </div>
-                : <div>Login</div>
+                : <div className={style.main}>Login</div>
 
 
             }

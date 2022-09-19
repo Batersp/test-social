@@ -1,3 +1,4 @@
 import {AppRootStateType} from "../../utils/types";
+import {ProfileType} from "./profileTypes";
 
-export const getUserName = (state: AppRootStateType): string => state.profile.profile.name
+export const getProfile = (state: AppRootStateType): ProfileType => state.profile.profile
