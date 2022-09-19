@@ -5,6 +5,7 @@ import {authApi} from "../../api/authApi";
 import {setAppSnackbarValue, setAppStatus, setError} from "../Application/application-reducer";
 import {setProfile} from "../Profile/profile-reducer";
 import {snackbarType} from "../../common/enums/snackbarType";
+import {ProfileInitialStateType} from "../Profile/profileTypes";
 
 export const login = createAsyncThunk(
     'auth/login',
@@ -43,9 +44,30 @@ export const login = createAsyncThunk(
     }
 )
 
+export const logout = createAsyncThunk(
+    'auth/logout',
+    async (param, {dispatch}) => {
+        try {
+            dispatch(setAppStatus({status: requestStatus.LOADING}))
+            setTimeout(async () => {
+                dispatch(setProfile({value: {} as ProfileInitialStateType}))
+                dispatch(changeLoggedIn({value: false}))
+                dispatch(setAppStatus({status: requestStatus.SUCCEEDED}))
+                localStorage.removeItem('auth')
+                localStorage.removeItem('userName')
+                dispatch(setAppSnackbarValue({type: snackbarType.SUCCESS, message: 'Вы успешно вышли'}))
+            }, 3000)
+
+        } catch (e) {
+
+        }
+    }
+)
+
+
 export const asyncActions = {
     login,
-
+    logout
 }
 
 
