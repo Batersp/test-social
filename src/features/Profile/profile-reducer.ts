@@ -9,7 +9,7 @@ export const slice = createSlice({
     } as ProfileInitialStateType,
     reducers: {
         setProfile(state, action: PayloadAction<{value: ProfileInitialStateType}>) {
-            state = action.payload.value
+            state.profile = action.payload.value.profile
         },
     }
 

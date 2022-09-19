@@ -16,7 +16,6 @@ export const login = createAsyncThunk(
                 const response = await authApi.login()
                 const mockUser = response.data.find(user => user.name === param.name && user.password === param.password)
                 if (mockUser) {
-                    debugger
                     dispatch(setProfile({
                         value: {
                             profile: {
