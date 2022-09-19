@@ -9,6 +9,7 @@ import {Profile} from "../features/Profile/Profile";
 import {LoginComponent} from "../features/Auth/Login/LoginComponent";
 import {News} from "../features/News/News";
 import {InfoSnackbar} from "../common/components/Snackbar/Snackbar";
+import {Header} from "../features/Header/Header";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
         <div className="App">
             <InfoSnackbar/>
             {requestStatus === 'loading' && <LinearProgress/>}
+            <Header/>
             <Routes>
                 <Route path='/' element={<Navigate to={path.PROFILE}/>}/>
                 <Route path={path.PROFILE} element={<Profile/>}/>
