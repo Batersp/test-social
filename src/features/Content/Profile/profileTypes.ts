@@ -11,7 +11,7 @@ export type ProfileType = {
 }
 
 export type PostType = {
-    id?: number
+    id: string
     message: string
     likeCounts: number
 }
