@@ -1,6 +1,7 @@
 import React from 'react';
 import style from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
+import {path} from "../../../common/enums/path";
 
 export const Navbar = () => {
     return (
@@ -10,10 +11,10 @@ export const Navbar = () => {
                     <img src="" alt=""/>
                 </div>
                 <div className={style.item}>
-                    <NavLink to='/profile'>Profile</NavLink>
+                    <NavLink to={path.PROFILE}>Profile</NavLink>
                 </div>
                 <div className={style.item}>
-                    <NavLink to='/news'>News</NavLink>
+                    <NavLink to={path.NEWS}>News</NavLink>
                 </div>
             </nav>
         </div>

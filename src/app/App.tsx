@@ -5,11 +5,10 @@ import {getIsLoading} from "../features/Application/selectors";
 import {LinearProgress} from "@mui/material";
 import {Navigate, Route, Routes} from 'react-router-dom';
 import {path} from "../common/enums/path";
-import {Profile} from "../features/Profile/Profile";
 import {LoginComponent} from "../features/Auth/Login/LoginComponent";
-import {News} from "../features/News/News";
 import {InfoSnackbar} from "../common/components/Snackbar/Snackbar";
 import {Header} from "../features/Header/Header";
+import {Content} from "../features/Content/Content";
 
 function App() {
 
@@ -21,10 +20,9 @@ function App() {
             {requestStatus === 'loading' && <LinearProgress/>}
             <Header/>
             <Routes>
-                <Route path='/' element={<Navigate to={path.PROFILE}/>}/>
-                <Route path={path.PROFILE} element={<Profile/>}/>
+                <Route path='/' element={<Navigate to={path.CONTENT}/>}/>
+                <Route path={path.CONTENT} element={<Content/>}/>
                 <Route path={path.LOGIN} element={<LoginComponent/>}/>
-                <Route path={path.NEWS} element={<News/>}/>
             </Routes>
 
         </div>

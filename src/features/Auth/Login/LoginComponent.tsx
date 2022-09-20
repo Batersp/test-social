@@ -24,7 +24,7 @@ export const LoginComponent = () => {
 
 
     if(isLoggedIn) {
-        return <Navigate to={path.PROFILE}/>
+        return <Navigate to={path.CONTENT}/>
     }
 
     return (
