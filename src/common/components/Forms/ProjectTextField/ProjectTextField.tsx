@@ -4,28 +4,29 @@ import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText/FormHelperText';
 import Input from '@mui/material/Input';
 import InputLabel from '@mui/material/InputLabel/InputLabel';
-import { useField } from 'formik';
+import {useField} from 'formik';
 import style from './ProjectTextField.module.css'
-
 
 
 type PropsType = {
     name: string;
     label: string;
     disabled?: boolean;
+    variant: 'standard' | 'outlined' | 'filled'
 };
 
 export const ProjectTextField: React.FC<PropsType> = ({
                                                           label,
                                                           name,
                                                           disabled,
+                                                          variant
                                                       }) => {
     const [field, meta] = useField(name);
 
     return (
-        <FormControl fullWidth variant="standard" className={style.main}>
+        <FormControl fullWidth variant={variant} className={style.main}>
             <InputLabel>{label}</InputLabel>
-            <Input margin="dense" {...field} name={name} disabled={disabled}  />
+            <Input margin="dense" {...field} name={name} disabled={disabled}/>
             {meta.touched && meta.error && <FormHelperText error>{meta.error}</FormHelperText>}
         </FormControl>
     );

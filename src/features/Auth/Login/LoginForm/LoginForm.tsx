@@ -15,7 +15,7 @@ export const LoginForm: React.FC<PropsType> = ({formik}) => {
     return (
         <Form>
             <FormGroup>
-                <ProjectTextField   name="name" label="Name" disabled={isSubmitting} />
+                <ProjectTextField variant='standard' name="name" label="Name" disabled={isSubmitting} />
                 <ProjectPasswordField name="password" label="Password" disabled={isSubmitting} />
 
                 <div className={style.btn}>

@@ -1,0 +1,30 @@
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.paper {
+    margin-top: 30px;
+    height: 100px;
+    display: flex;
+    border-radius: 30px;
+    padding: 20px;
+}
+
+.form {
+    display: flex;
+}
+
+.photo {
+    margin-right: 20px;
+}
+
+.field {
+    margin-right: 20px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+}
