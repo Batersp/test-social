@@ -1,10 +1,10 @@
 import React from 'react';
-import style from './ProfileInfo.module.css'
+import style from './MyPosts.module.css'
 
-export const ProfileInfo = () => {
+export const MyPosts = () => {
     return (
         <div className={style.container}>
-            INFO
+            MY Posts
         </div>
     );
 };

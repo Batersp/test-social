@@ -1,6 +1,6 @@
 import {changeLoggedIn} from "../features/Auth/auth-reducer";
 import {setAppSnackbarValue, setAppStatus, setError} from "../features/Application/application-reducer";
-import {setProfile} from "../features/Profile/profile-reducer";
+import {setProfile} from "../features/Content/Profile/profile-reducer";
 
 
 export type AppActionsType =

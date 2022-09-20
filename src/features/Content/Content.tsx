@@ -2,11 +2,11 @@ import React from 'react';
 import style from './Content.module.css'
 import {Navigate, Route, Routes} from "react-router-dom";
 import {path} from "../../common/enums/path";
-import {Profile} from "../Profile/Profile";
+import {Profile} from "./Profile/Profile";
 import {News} from "../News/News";
 import {useAppSelector} from "../../common/hooks/hooks";
 import {authSelectors} from "../Auth";
-import {Navbar} from "../Profile/Navbar/Navbar";
+import {Navbar} from "./Navbar/Navbar";
 
 export const Content = () => {
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import style from './Header.module.css'
 import {useAppDispatch, useAppSelector} from "../../common/hooks/hooks";
-import {profileSelectors} from "../Profile";
+import {profileSelectors} from "../Content/Profile";
 import {authSelectors, logout} from "../Auth";
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 

@@ -3,9 +3,9 @@ import {LoginType} from "./authTypes";
 import {requestStatus} from "../../common/enums/requestStatus";
 import {authApi} from "../../api/authApi";
 import {setAppSnackbarValue, setAppStatus, setError} from "../Application/application-reducer";
-import {setProfile} from "../Profile/profile-reducer";
+import {setProfile} from "../Content/Profile/profile-reducer";
 import {snackbarType} from "../../common/enums/snackbarType";
-import {ProfileInitialStateType} from "../Profile/profileTypes";
+import {ProfileInitialStateType} from "../Content/Profile/profileTypes";
 
 export const login = createAsyncThunk(
     'auth/login',
