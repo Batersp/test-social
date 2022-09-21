@@ -14,7 +14,7 @@ type PropsType = {
     photo: string
 }
 
-export const NewPostForm: React.FC<PropsType> = ({photo}) => {
+export const NewPostForm: React.FC<PropsType> = React.memo( ({photo}) => {
     const dispatch = useAppDispatch()
 
     const onSubmitHandler = (value: FormikValues, {resetForm}: FormikHelpers<{message: string}>) => {
@@ -56,5 +56,5 @@ export const NewPostForm: React.FC<PropsType> = ({photo}) => {
             </div>
         </div>
     );
-};
+});
 

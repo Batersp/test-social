@@ -8,8 +8,7 @@ import {useAppSelector} from "../../common/hooks/hooks";
 import {authSelectors} from "../Auth";
 import {Navbar} from "./Navbar/Navbar";
 
-export const Content = () => {
-
+export const Content = React.memo( () => {
     const isLoggedIn = useAppSelector(authSelectors.getIsLoggedIn)
 
 
@@ -26,5 +25,5 @@ export const Content = () => {
             </Routes>
         </div>
     );
-};
+});
 

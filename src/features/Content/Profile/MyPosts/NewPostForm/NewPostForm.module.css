@@ -14,6 +14,29 @@
 
 }
 
+@media screen and (max-width: 700px){
+    .photo {
+        width: 80px;
+        margin-right: 0 !important;
+
+    }
+    .form {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .paper {
+        height: 200px;
+    }
+    .btn {
+        margin-top: 10px;
+    }
+    .field {
+        margin: 0 !important;
+    }
+
+}
+
 .form {
     display: flex;
 }

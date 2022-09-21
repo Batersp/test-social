@@ -6,8 +6,7 @@ type PropsType = {
   post: NewsType
 }
 
-export const Item: React.FC<PropsType> = ({post}) => {
-
+export const Item: React.FC<PropsType> = React.memo( ({post}) => {
     const {message, title, category} = post
 
     return (
@@ -16,5 +15,5 @@ export const Item: React.FC<PropsType> = ({post}) => {
             <div className={style.message}>{message}</div>
         </div>
     );
-};
+});
 

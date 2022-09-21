@@ -11,8 +11,7 @@ import {path} from "../../../common/enums/path";
 import {authSelectors, login} from "../index";
 
 
-export const LoginComponent = () => {
-
+export const LoginComponent = React.memo( () => {
     const dispatch = useAppDispatch()
 
     const isLoggedIn = useAppSelector(authSelectors.getIsLoggedIn)
@@ -34,6 +33,7 @@ export const LoginComponent = () => {
                     Sing In
                 </Typography>
                 <Formik
+                    /*@ts-ignore*/
                     initialValues={{name: '', password: ''}}
                     validationSchema={validateLogin}
                     onSubmit={onSubmitHandler}
@@ -44,7 +44,7 @@ export const LoginComponent = () => {
             </Paper>
         </div>
     );
-};
+});
 
 
 

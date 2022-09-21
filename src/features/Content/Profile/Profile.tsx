@@ -6,8 +6,7 @@ import {useAppSelector} from "../../../common/hooks/hooks";
 import {getProfile} from "./selectors";
 
 
-export const Profile = () => {
-
+export const Profile = React.memo( () => {
     const profile = useAppSelector(getProfile)
     const {photo, name, status} = profile
 
@@ -17,5 +16,5 @@ export const Profile = () => {
             <MyPosts photo={photo}/>
         </div>
     );
-};
+});
 

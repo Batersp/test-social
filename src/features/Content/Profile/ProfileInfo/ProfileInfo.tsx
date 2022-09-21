@@ -8,13 +8,12 @@ type PropsType = {
     status: string
 }
 
-export const ProfileInfo: React.FC<PropsType> = ({status, photo, name}) => {
-
+export const ProfileInfo: React.FC<PropsType> = React.memo( ({status, photo, name}) => {
     return (
         <div className={style.container}>
             <Box className={style.main}>
                 <Paper elevation={3} className={style.paper}>
-                    <img className={style.photo} src={photo} alt={'profile photo'}/>
+                    <img className={style.photo} src={photo} alt={'profile '}/>
                 </Paper>
                 <div className={style.description}>
                     <div className={style.name}>{name}</div>
@@ -23,5 +22,5 @@ export const ProfileInfo: React.FC<PropsType> = ({status, photo, name}) => {
             </Box>
         </div>
     );
-};
+});
 

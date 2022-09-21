@@ -24,7 +24,6 @@ function App() {
                 <Route path={path.CONTENT} element={<Content/>}/>
                 <Route path={path.LOGIN} element={<LoginComponent/>}/>
             </Routes>
-
         </div>
     );
 }

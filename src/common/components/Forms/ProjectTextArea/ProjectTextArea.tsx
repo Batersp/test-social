@@ -8,7 +8,7 @@ type PropsType = {
     label: string
 }
 
-export const ProjectTextArea: React.FC<PropsType> = ({name, label}) => {
+export const ProjectTextArea: React.FC<PropsType> = React.memo( ({name, label}) => {
 
     const [field, meta] = useField(name);
     return (
@@ -22,5 +22,5 @@ export const ProjectTextArea: React.FC<PropsType> = ({name, label}) => {
             />
         </FormControl>
     );
-};
+});
 

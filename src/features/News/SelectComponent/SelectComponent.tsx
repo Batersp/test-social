@@ -10,7 +10,7 @@ type PropsType = {
     changeFilter: (value: CategoryType) => void
 }
 
-export const SelectComponent: React.FC<PropsType> = ({categories, filter, changeFilter}) => {
+export const SelectComponent: React.FC<PropsType> = React.memo( ({categories, filter, changeFilter}) => {
 
 
     const handleChange = (event: SelectChangeEvent) => {
@@ -31,5 +31,5 @@ export const SelectComponent: React.FC<PropsType> = ({categories, filter, change
             </FormControl>
         </Box>
     );
-};
+});
 

@@ -13,11 +13,44 @@
 }
 
 .photo {
-    width: 200px;
+    width: 100%;
     padding: 10px;
     box-sizing: border-box;
     border-radius: 20px;
 }
+
+@media screen and (max-width: 1055px){
+    .paper{
+        width: 150px;
+    }
+}
+@media screen and (max-width: 800px){
+    .paper{
+        width: 100px;
+        margin: 0 auto;
+    }
+    .name{
+        font-size: 30px !important;
+    }
+    .status{
+        font-size: 15px !important;
+    }
+}
+
+@media screen and (max-width: 630px){
+    .status{
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .paper {
+        width: 70px;
+    }
+}
+
+
+
+
+
 
 .description {
    display: flex;

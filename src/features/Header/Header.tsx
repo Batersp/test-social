@@ -6,7 +6,7 @@ import {authSelectors, logout} from "../Auth";
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 
 
-export const Header = () => {
+export const Header = React.memo( () => {
 
     const dispatch = useAppDispatch()
     const profile = useAppSelector(profileSelectors.getProfile)
@@ -31,5 +31,5 @@ export const Header = () => {
 
         </div>
     );
-};
+});
 

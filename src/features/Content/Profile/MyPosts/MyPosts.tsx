@@ -9,8 +9,7 @@ type PropsType = {
     photo: string
 }
 
-export const MyPosts: React.FC<PropsType> = ({photo}) => {
-
+export const MyPosts: React.FC<PropsType> = React.memo( ({photo}) => {
     const posts = useAppSelector(getPosts)
 
     return (
@@ -23,5 +22,5 @@ export const MyPosts: React.FC<PropsType> = ({photo}) => {
 
         </div>
     );
-};
+});
 

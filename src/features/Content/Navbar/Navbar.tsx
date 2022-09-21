@@ -6,7 +6,7 @@ import {path} from "../../../common/enums/path";
 
 const setActive = ({isActive}: any) => isActive? style.active: ''
 
-export const Navbar = () => {
+export const Navbar = React.memo( () => {
     return (
         <div className={style.container}>
             <nav>
@@ -22,5 +22,5 @@ export const Navbar = () => {
             </nav>
         </div>
     );
-};
+});
 

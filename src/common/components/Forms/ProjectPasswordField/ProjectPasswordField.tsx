@@ -21,7 +21,7 @@ type PropsType = {
     disabled?: boolean;
 };
 
-export const ProjectPasswordField: React.FC<PropsType> = ({
+export const ProjectPasswordField: React.FC<PropsType> = React.memo( ({
                                                        label,
                                                        name,
                                                        disabled,
@@ -56,4 +56,4 @@ export const ProjectPasswordField: React.FC<PropsType> = ({
             {meta.touched && meta.error && <FormHelperText error>{meta.error}</FormHelperText>}
         </FormControl>
     );
-};
+});

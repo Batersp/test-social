@@ -7,8 +7,7 @@ import {CategoryType} from "./newsTypes";
 import {changeFilter} from "./news-reducer";
 import {Item} from "./Item/Item";
 
-export const News = () => {
-
+export const News = React.memo( () => {
     const dispatch = useAppDispatch()
     let filter = useAppSelector(newsSelectors.getFilter)
     const categories = useAppSelector(newsSelectors.getCategories)
@@ -28,5 +27,5 @@ export const News = () => {
             {news.map(el => <Item key={el.id} post={el}/>)}
         </div>
     );
-};
+});
 
