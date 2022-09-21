@@ -1,11 +1,17 @@
 .container {
-    padding: 40px;
+    margin: 40px;
+    background-color: #2ba13f;
+    border-radius: 20px;
 }
 
 .title {
+    padding-left: 20px;
+    padding-top: 20px;
     font-weight: bold;
+    color: white;
+    font-size: 20px;
 }
 
 .message {
-
+    padding: 20px;
 }

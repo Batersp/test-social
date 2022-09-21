@@ -2,9 +2,20 @@
 
 }
 
-.paper {
-    margin-left: 30px;
+.main {
+    background-color:  blueviolet;
+    padding: 20px;
     margin-top: 20px;
+    margin-left: 20px;
+    width: 50%;
+    border-radius: 50px;
+}
+
+.paper {
+    margin: 20px;
+    padding: 10px;
+    background-color: rgba(191,126,122,0.75);
+    border-radius: 20px;
     width: 50%;
     display: flex;
     align-items: center;
@@ -31,7 +42,8 @@
     flex-direction: column;
     align-items: center;
     position: absolute;
-    right: 0;
+    right: 10px;
+
 }
 
 .icons {
@@ -40,7 +52,7 @@
 }
 
 .like {
-    margin-bottom: 10px;
+
 }
 
 .count {

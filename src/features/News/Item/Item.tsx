@@ -1,15 +1,18 @@
 import React from 'react';
 import style from './Item.module.css'
+import {NewsType} from "../newsTypes";
 
 type PropsType = {
-    message: string
-    title: string
+  post: NewsType
 }
 
-export const Item: React.FC<PropsType> = ({title, message}) => {
+export const Item: React.FC<PropsType> = ({post}) => {
+
+    const {message, title, category} = post
+
     return (
         <div className={style.container}>
-            <div className={style.title}>{title}</div>
+            <div className={style.title}>{`${title} (${category})`}</div>
             <div className={style.message}>{message}</div>
         </div>
     );

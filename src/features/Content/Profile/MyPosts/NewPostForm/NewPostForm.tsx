@@ -1,13 +1,14 @@
 import React from 'react';
 import style from './NewPostForm.module.css'
 import {Form, Formik, FormikHelpers, FormikValues} from 'formik';
-import {Paper} from "@mui/material";
 import {GeneralButton} from "../../../../../common/components/Buttons/GeneralButton/GeneralButton";
 import {validateNewPost} from "./validateNewPost";
 import {ProjectTextArea} from "../../../../../common/components/Forms/ProjectTextArea/ProjectTextArea";
 import {useAppDispatch} from "../../../../../common/hooks/hooks";
 import {addPost} from "../../profile-reducer";
 import {v1} from "uuid";
+import {setAppSnackbarValue} from "../../../../Application/application-reducer";
+import {snackbarType} from "../../../../../common/enums/snackbarType";
 
 type PropsType = {
     photo: string
@@ -17,13 +18,19 @@ export const NewPostForm: React.FC<PropsType> = ({photo}) => {
     const dispatch = useAppDispatch()
 
     const onSubmitHandler = (value: FormikValues, {resetForm}: FormikHelpers<{message: string}>) => {
-        dispatch(addPost({value: {message: value.message, id: v1(), likeCounts: 0}}))
-        resetForm()
+        if(value.message.trim().length !== 0) {
+            dispatch(addPost({value: {message: value.message.trim(), id: v1(), likeCounts: 0}}))
+            resetForm()
+        } else {
+            dispatch(setAppSnackbarValue({type: snackbarType.ERROR, message: 'ваш пост не должен быть пустым'}))
+            resetForm()
+        }
+
     }
 
     return (
         <div className={style.container}>
-            <Paper elevation={3} className={style.paper}>
+            <div className={style.paper}>
                 <Formik
                     initialValues={{message: ''}}
                     validationSchema={validateNewPost}
@@ -37,6 +44,7 @@ export const NewPostForm: React.FC<PropsType> = ({photo}) => {
                         </div>
                         <div className={style.btn}>
                             <GeneralButton
+                                color={'secondary'}
                                 label='Add post'
                                 type='submit'
                                 disabled={!formik.isValid || !formik.dirty}
@@ -45,7 +53,7 @@ export const NewPostForm: React.FC<PropsType> = ({photo}) => {
                     </Form>
                     }
                 </Formik>
-            </Paper>
+            </div>
         </div>
     );
 };

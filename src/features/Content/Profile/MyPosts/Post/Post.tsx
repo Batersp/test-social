@@ -1,12 +1,14 @@
-import React, {ChangeEvent, useState, KeyboardEvent} from 'react';
+import React, {ChangeEvent, KeyboardEvent, useState} from 'react';
 import style from './Post.module.css'
 import {PostType} from "../../profileTypes";
-import {Paper, TextareaAutosize} from "@mui/material";
+import {TextareaAutosize} from "@mui/material";
 import IconButton from "@mui/material/IconButton/IconButton";
 import DeleteIcon from '@mui/icons-material/Delete';
 import {useAppDispatch} from "../../../../../common/hooks/hooks";
 import {changePost, removePost} from "../../profile-reducer";
 import EditIcon from '@mui/icons-material/Edit';
+import {setAppSnackbarValue} from "../../../../Application/application-reducer";
+import {snackbarType} from "../../../../../common/enums/snackbarType";
 
 type PropsType = {
     post: PostType
@@ -30,7 +32,8 @@ export const Post: React.FC<PropsType> = ({post, photo}) => {
 
     const onChangeValue = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setValue(e.currentTarget.value)
-        dispatch(changePost({id, message: e.currentTarget.value}))
+        dispatch(changePost({id, message: e.currentTarget.value.trim()}))
+
     }
 
     const onClickHandler = () => {
@@ -46,11 +49,12 @@ export const Post: React.FC<PropsType> = ({post, photo}) => {
 
     return (
         <div className={style.container}>
-            <Paper elevation={3} className={style.paper}>
+            <div className={style.paper}>
                 <img className={style.photo} src={photo} alt=""/>
                 {
                     editMode
-                        ? <TextareaAutosize onKeyPress={onKeyPressHandler}  className={style.textArea} value={value} onChange={onChangeValue} autoFocus
+                        ? <TextareaAutosize onKeyPress={onKeyPressHandler} className={style.textArea} value={value}
+                                            onChange={onChangeValue} autoFocus
                                             onBlur={activateViewMode}/>
                         : <div onDoubleClick={activateEditMode} className={style.message}>{value}</div>
                 }
@@ -70,7 +74,7 @@ export const Post: React.FC<PropsType> = ({post, photo}) => {
                     </div>
                 </div>
 
-            </Paper>
+            </div>
         </div>
     );
 };

@@ -11,5 +11,5 @@ export type NewsType = {
     id: string
     title: string
 }
-export type CategoryType =  'all' | 'sport' | 'culture' | 'movie' | 'beauty'
+export type CategoryType =  'All' | 'Sport' | 'Culture' | 'Movie' | 'Beauty'
 export type CategoriesType = CategoryType[]

@@ -19,7 +19,7 @@ export const SelectComponent: React.FC<PropsType> = ({categories, filter, change
 
     return (
         <Box className={style.container}>
-            <FormControl>
+            <FormControl fullWidth>
                 <InputLabel>Category</InputLabel>
                 <Select
                     value={filter}

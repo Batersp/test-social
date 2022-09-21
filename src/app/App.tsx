@@ -17,7 +17,7 @@ function App() {
     return (
         <div className="App">
             <InfoSnackbar/>
-            {requestStatus === 'loading' && <LinearProgress/>}
+            {requestStatus === 'loading' && <div style={{position: 'absolute', left: 0, right: 0}}><LinearProgress/></div> }
             <Header/>
             <Routes>
                 <Route path='/' element={<Navigate to={path.CONTENT}/>}/>

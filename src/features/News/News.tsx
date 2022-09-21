@@ -13,7 +13,7 @@ export const News = () => {
     let filter = useAppSelector(newsSelectors.getFilter)
     const categories = useAppSelector(newsSelectors.getCategories)
     let news = useAppSelector(newsSelectors.getNews)
-    if(filter !== 'all') {
+    if(filter !== 'All') {
         news = news.filter(el => el.category === filter)
     }
     const changeFilterHandler = (filter: CategoryType) => {
@@ -25,7 +25,7 @@ export const News = () => {
         <div className={style.container}>
             <div className={style.title}>News</div>
             <SelectComponent changeFilter={changeFilterHandler} filter={filter} categories={categories}/>
-            {news.map(el => <Item message={el.message} title={el.title}/>)}
+            {news.map(el => <Item key={el.id} post={el}/>)}
         </div>
     );
 };

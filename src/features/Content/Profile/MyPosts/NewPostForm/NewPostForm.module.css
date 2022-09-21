@@ -9,6 +9,8 @@
     height: 100px;
     display: flex;
     padding: 10px;
+    background-color: rgba(191,126,122,0.75);
+    border-radius: 30px;
 
 }
 

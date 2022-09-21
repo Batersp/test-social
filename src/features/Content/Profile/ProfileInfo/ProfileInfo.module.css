@@ -1,9 +1,10 @@
 .container {
     width: 30%;
-    background-color: blueviolet;
+    background-color: rgba(191,126,122,0.75);
     display: flex;
     justify-content: center;
     padding-top: 20px;
+
 }
 
 .paper {
@@ -28,6 +29,7 @@
     font-size: 40px;
     font-weight: bold;
     margin-top: 20px;
+    text-shadow: 1px -3px 1px rgba(222, 238, 228, 0.89);
 }
 
 .status {
