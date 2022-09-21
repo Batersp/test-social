@@ -1,5 +1,5 @@
 import axios from "axios";
-import {ProfileType} from "../features/Content/Profile/profileTypes";
+import {ProfileType} from "../features/Profile/profileTypes";
 
 export const authApi = {
     login() {

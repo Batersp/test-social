@@ -4,7 +4,7 @@ import {PostType} from "../../profileTypes";
 import {TextareaAutosize} from "@mui/material";
 import IconButton from "@mui/material/IconButton/IconButton";
 import DeleteIcon from '@mui/icons-material/Delete';
-import {useAppDispatch} from "../../../../../common/hooks/hooks";
+import {useAppDispatch} from "../../../../common/hooks/hooks";
 import {changePost, removePost} from "../../profile-reducer";
 import EditIcon from '@mui/icons-material/Edit';
 

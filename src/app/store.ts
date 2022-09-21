@@ -2,7 +2,7 @@ import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import thunkMiddleware from 'redux-thunk'
 import {authReducer} from "../features/Auth";
 import {appReducer} from "../features/Application";
-import {profileReducer} from "../features/Content/Profile";
+import {profileReducer} from "../features/Profile";
 import {newsReducer} from "../features/News";
 
 export const rootReducer = combineReducers({

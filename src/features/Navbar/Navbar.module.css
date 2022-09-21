@@ -1,5 +1,5 @@
 .container {
-    background-color: rgba(182,91,238,0.89);
+    background-color: rgba(182, 91, 238, 0.89);
     width: 10%;
     min-height: calc(100vh - 50px);
 
@@ -26,10 +26,11 @@
     font-weight: bold;
 }
 
-@media screen and (max-width: 650px){
-   .item a {
-       font-size: 15px;
-   }
+@media screen and (max-width: 650px) {
+    .item a {
+        font-size: 15px;
+    }
+
     .container {
         width: 20%;
     }

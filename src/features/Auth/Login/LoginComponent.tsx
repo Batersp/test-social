@@ -23,7 +23,7 @@ export const LoginComponent = React.memo( () => {
 
 
     if(isLoggedIn) {
-        return <Navigate to={path.CONTENT}/>
+        return <Navigate to={path.PROFILE}/>
     }
 
     return (

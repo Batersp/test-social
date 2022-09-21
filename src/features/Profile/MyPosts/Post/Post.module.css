@@ -3,7 +3,7 @@
 }
 
 .main {
-    background-color:  blueviolet;
+    background-color: blueviolet;
     padding: 20px;
     margin-top: 20px;
     margin-left: 20px;
@@ -14,7 +14,7 @@
 .paper {
     margin: 20px;
     padding: 10px;
-    background-color: rgba(191,126,122,0.75);
+    background-color: rgba(191, 126, 122, 0.75);
     border-radius: 20px;
     width: 50%;
     display: flex;
@@ -22,19 +22,49 @@
     position: relative;
 }
 
-.photo{
+@media screen and (max-width: 1018px) {
+    .paper {
+        width: 60%;
+    }
+
+}
+
+@media screen and (max-width: 840px) {
+    .paper {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .paper {
+        min-height: 50px;
+    }
+
+    .textArea {
+        width: 50% !important;
+    }
+}
+
+@media screen and (max-width: 470px) {
+    .textArea {
+        width: 40% !important;
+    }
+}
+
+
+.photo {
     width: 10%;
     margin-right: 20px;
 }
 
 .textArea {
     margin: 10px;
-    width: 70%;
+    width: 60%;
 }
 
 
 .message {
-    margin-right: 50px;
+    margin-right: 70px;
 }
 
 .info {

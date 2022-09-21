@@ -1,6 +1,6 @@
 import {changeLoggedIn} from "../features/Auth/auth-reducer";
 import {setAppSnackbarValue, setAppStatus, setError} from "../features/Application/application-reducer";
-import {addPost, changePost, removePost, setProfile} from "../features/Content/Profile/profile-reducer";
+import {addPost, changePost, removePost, setProfile} from "../features/Profile/profile-reducer";
 import {addNews, changeFilter} from "../features/News/news-reducer";
 
 

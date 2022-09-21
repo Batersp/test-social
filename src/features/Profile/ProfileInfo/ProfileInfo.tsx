@@ -8,7 +8,7 @@ type PropsType = {
     status: string
 }
 
-export const ProfileInfo: React.FC<PropsType> = React.memo( ({status, photo, name}) => {
+export const ProfileInfo: React.FC<PropsType> = React.memo(({status, photo, name}) => {
     return (
         <div className={style.container}>
             <Box className={style.main}>

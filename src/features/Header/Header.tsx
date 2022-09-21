@@ -1,12 +1,12 @@
 import React from 'react';
 import style from './Header.module.css'
 import {useAppDispatch, useAppSelector} from "../../common/hooks/hooks";
-import {profileSelectors} from "../Content/Profile";
+import {profileSelectors} from "../Profile";
 import {authSelectors, logout} from "../Auth";
 import ExitToAppOutlinedIcon from '@mui/icons-material/ExitToAppOutlined';
 
 
-export const Header = React.memo( () => {
+export const Header = React.memo(() => {
 
     const dispatch = useAppDispatch()
     const profile = useAppSelector(profileSelectors.getProfile)

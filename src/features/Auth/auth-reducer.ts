@@ -3,9 +3,9 @@ import {LoginType} from "./authTypes";
 import {requestStatus} from "../../common/enums/requestStatus";
 import {authApi} from "../../api/authApi";
 import {setAppSnackbarValue, setAppStatus, setError} from "../Application/application-reducer";
-import {setProfile} from "../Content/Profile/profile-reducer";
+import {setProfile} from "../Profile/profile-reducer";
 import {snackbarType} from "../../common/enums/snackbarType";
-import {ProfileInitialStateType} from "../Content/Profile/profileTypes";
+import {ProfileInitialStateType} from "../Profile/profileTypes";
 
 export const login = createAsyncThunk(
     'auth/login',
@@ -28,8 +28,9 @@ export const login = createAsyncThunk(
                     }))
                     dispatch(changeLoggedIn({value: true}))
                     dispatch(setError({error: ''}))
+                    /*Если бы нужно было при перезагрузке страницы оставаться залогиненым, то можно диспачить в юзэффекте login с параметрами из localStorage
                     localStorage.setItem('auth', 'true')
-                    localStorage.setItem('userName', param.name)
+                    localStorage.setItem('userName', param.name)*/
                     dispatch(setAppSnackbarValue({type: snackbarType.SUCCESS, message: 'Вы успешно авторизовались'}))
                 } else {
                     dispatch(setError({error: 'Неверный логин или пароль'}))
@@ -51,11 +52,12 @@ export const logout = createAsyncThunk(
         try {
             dispatch(setAppStatus({status: requestStatus.LOADING}))
             setTimeout(async () => {
-                dispatch(setProfile({value: {} as ProfileInitialStateType}))
                 dispatch(changeLoggedIn({value: false}))
+                dispatch(setProfile({value: {} as ProfileInitialStateType}))
                 dispatch(setAppStatus({status: requestStatus.SUCCEEDED}))
-                localStorage.removeItem('auth')
-                localStorage.removeItem('userName')
+                /* очищаем localStorage при логауте
+                 localStorage.removeItem('auth')
+                 localStorage.removeItem('userName')*/
                 dispatch(setAppSnackbarValue({type: snackbarType.SUCCESS, message: 'Вы успешно вышли'}))
             }, 3000)
 

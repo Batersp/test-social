@@ -3,10 +3,10 @@ import style from './Item.module.css'
 import {NewsType} from "../newsTypes";
 
 type PropsType = {
-  post: NewsType
+    post: NewsType
 }
 
-export const Item: React.FC<PropsType> = React.memo( ({post}) => {
+export const Item: React.FC<PropsType> = React.memo(({post}) => {
     const {message, title, category} = post
 
     return (

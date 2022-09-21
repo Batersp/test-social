@@ -8,22 +8,31 @@ import {path} from "../common/enums/path";
 import {LoginComponent} from "../features/Auth/Login/LoginComponent";
 import {InfoSnackbar} from "../common/components/Snackbar/Snackbar";
 import {Header} from "../features/Header/Header";
-import {Content} from "../features/Content/Content";
+import {Profile} from "../features/Profile/Profile";
+import {News} from "../features/News/News";
+import {authSelectors} from "../features/Auth";
+import {Navbar} from "../features/Navbar/Navbar";
 
 function App() {
 
     const requestStatus = useAppSelector(getIsLoading)
+    const isLoggedIn = useAppSelector(authSelectors.getIsLoggedIn)
 
     return (
         <div className="App">
             <InfoSnackbar/>
-            {requestStatus === 'loading' && <div style={{position: 'absolute', left: 0, right: 0}}><LinearProgress/></div> }
+            {requestStatus === 'loading' &&
+                <div style={{position: 'absolute', left: 0, right: 0}}><LinearProgress/></div>}
             <Header/>
-            <Routes>
-                <Route path='/' element={<Navigate to={path.CONTENT}/>}/>
-                <Route path={path.CONTENT} element={<Content/>}/>
-                <Route path={path.LOGIN} element={<LoginComponent/>}/>
-            </Routes>
+            <div className={'content'}>
+                {isLoggedIn && <Navbar/>}
+                <Routes>
+                    <Route path='/' element={<Navigate to={path.PROFILE}/>}/>
+                    <Route path={path.PROFILE} element={<Profile/>}/>
+                    <Route path={path.NEWS} element={<News/>}/>
+                    <Route path={path.LOGIN} element={<LoginComponent/>}/>
+                </Routes>
+            </div>
         </div>
     );
 }

@@ -1,12 +1,12 @@
 import React from 'react';
 import style from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
-import {path} from "../../../common/enums/path";
+import {path} from "../../common/enums/path";
 
 
-const setActive = ({isActive}: any) => isActive? style.active: ''
+const setActive = ({isActive}: any) => isActive ? style.active : ''
 
-export const Navbar = React.memo( () => {
+export const Navbar = React.memo(() => {
     return (
         <div className={style.container}>
             <nav>
