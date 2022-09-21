@@ -2,7 +2,6 @@ import React from 'react';
 import {TextareaAutosize} from "@mui/material";
 import FormControl from "@mui/material/FormControl";
 import {useField} from "formik";
-import FormHelperText from "@mui/material/FormHelperText/FormHelperText";
 
 type PropsType = {
     name: string
@@ -21,7 +20,6 @@ export const ProjectTextArea: React.FC<PropsType> = ({name, label}) => {
                 placeholder="Enter you message"
                 style={{ width: 200 }}
             />
-            {meta.touched && meta.error && <FormHelperText error>{meta.error}</FormHelperText>}
         </FormControl>
     );
 };

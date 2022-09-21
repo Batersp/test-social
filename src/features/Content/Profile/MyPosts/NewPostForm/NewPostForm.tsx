@@ -33,8 +33,7 @@ export const NewPostForm: React.FC<PropsType> = ({photo}) => {
                     <Form className={style.form}>
                         <img className={style.photo} src={photo} alt=""/>
                         <div className={style.field}>
-                            <ProjectTextArea name='message' label='Enter you message'/>
-                            {/*<ProjectTextField variant='filled' name={'message'} label='NewPost'/>*/}
+                            <ProjectTextArea  name='message' label='Enter you message'/>
                         </div>
                         <div className={style.btn}>
                             <GeneralButton

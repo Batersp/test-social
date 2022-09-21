@@ -16,7 +16,7 @@ export const MyPosts: React.FC<PropsType> = ({photo}) => {
     return (
         <div className={style.container}>
             <NewPostForm photo={photo}/>
-            {posts.map(el => <Post photo={photo} post={el}/>)}
+            {posts.map(el => <Post key={el.id} photo={photo} post={el}/>)}
         </div>
     );
 };

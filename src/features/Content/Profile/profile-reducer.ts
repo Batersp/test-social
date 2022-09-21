@@ -18,11 +18,15 @@ export const slice = createSlice({
             const index = state.posts.findIndex(el => el.id === action.payload.id)
             state.posts.splice(index, 1)
         },
+        changePost(state, action: PayloadAction<{id: string, message: string}>) {
+            const index = state.posts.findIndex(el => el.id === action.payload.id)
+            state.posts[index].message = action.payload.message
+        },
     }
 
 })
 
-export const {setProfile, addPost, removePost} = slice.actions
+export const {setProfile, addPost, removePost, changePost} = slice.actions
 
 
 
