@@ -20,7 +20,7 @@ function App() {
             {requestStatus === 'loading' && <LinearProgress/>}
             <Header/>
             <Routes>
-                <Route path='/' element={<Navigate to={path.CONTENT}/>}/>
+                <Route path='/test-social' element={<Navigate to={path.CONTENT}/>}/>
                 <Route path={path.CONTENT} element={<Content/>}/>
                 <Route path={path.LOGIN} element={<LoginComponent/>}/>
             </Routes>
